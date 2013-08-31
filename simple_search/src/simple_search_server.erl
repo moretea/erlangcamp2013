@@ -36,7 +36,7 @@ handle_call({search, Term}, _From, State) ->
   {reply, reverse_index:match(Term), State}.
 
 handle_cast({add_document, {Key, Document}}, State) ->
-  {noreploy, reverse_index:add(State, Key, Document)}.
+  {noreply, reverse_index:add(State, Key, Document)}.
 
 
 %% OTP boilerplace stuff that is not relevant for this server.
