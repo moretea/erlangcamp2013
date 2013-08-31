@@ -33,7 +33,7 @@ init([]) ->
   {ok, reverse_index:new()}.
 
 handle_call({search, Term}, _From, State) ->
-  {reply, reverse_index:match(Term), State}.
+  {reply, reverse_index:match(State, Term), State}.
 
 handle_cast({add_document, {Key, Document}}, State) ->
   {noreply, reverse_index:add(State, Key, Document)}.
