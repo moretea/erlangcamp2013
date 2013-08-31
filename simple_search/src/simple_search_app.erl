@@ -1,0 +1,9 @@
+-module(simple_search_app).
+-behaviour(application).
+-export([start/2, stop/1]).
+
+start(_StartType, _StartArgs) ->
+  simple_search_superviser:start_link().
+
+stop(_State) ->
+  ok.
